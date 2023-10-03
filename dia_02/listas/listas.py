@@ -94,4 +94,126 @@ print(f"Lista antes de remover valor do indice 2 {lista1}")
 lista1.pop(2)
 print(f"Lista após remover valor do indice 2 : {lista1}")
 
+# Remover todos os elementos da lista
+print(lista1)
+lista1.clear()
+print(lista1)
 
+#Podemos repetir elementos em uma lista
+
+nova = [1, 2, 4]
+print(nova)
+nova = nova * 3
+print(nova)
+
+#Podemos coverter uma string para uma lista
+#OBS: por padrão o split separa os elementos da lista pelo espaço entre elas
+
+nome = 'Diego Broetto'
+print(nome)
+nome.split()
+print(nome)
+
+#Exemplo 2, usando outro elemento como separador
+
+nome2 = "Diego,de,Padua,Broetto"
+nome2 = nome2.split(',')
+print(nome2)
+
+#Conveter uma lista em uma string
+nome3 = ["Testando", "Funções", "de", "Listas", "em", "Python"]
+print(nome3)
+#Abaixo estamos falando, pegar a lista nome3, coloca espaço entre cada elemento e tranforma em string
+nome3 = ' '.join(nome3)
+print(nome3)
+
+#Iterando sobre listas
+
+#Exemplo 1
+
+lista_nova = [1, 1, 2, 99, 23, 44, 55]
+
+soma = 0
+for elemento in lista_nova:
+    print(elemento)
+    soma = soma + elemento
+print(soma)
+
+#Exemplo 2 - Utilizando while
+
+carrinho = []
+produto = []
+
+while produto != 'sair':
+    print("Adicione ou produto na lista ou digite 'sair' para sair")
+    produto = input()
+    if produto != 'sair':
+        carrinho.append(produto)
+
+for produto in carrinho:
+    print(produto)
+
+#utilizado variáveis em listas
+
+numero = [1, 2, 3, 4, 5]
+
+
+num1 = 1
+num2 = 2
+num3 = 3
+num4 = 4
+num5 = 5
+
+numeros = [num1, num2, num3, num4, num5]
+print(numeros)
+
+#gerar indice em um for
+
+for indice, numeros in enumerate(numero):
+    print(f"Indice[{indice}]={numeros}")
+
+#encontrar o índice de um elemento na lista
+
+print(numero.index(1))
+
+#Soma, Valor Máximo, Valo Mínimo, Tamanho
+
+valor1 = [1, 2, 3, 4, 5]
+
+print(sum(valor1))
+print(max(valor1))
+print(min(valor1))
+print(len(valor1))
+
+#tranformar lista em tupla
+
+valor2 = [1, 2, 3, 4, 5]
+print(valor2)
+print(type(valor2))
+
+tupla = tuple(valor2)
+print(valor2)
+print(type(valor2))
+
+#Copiando uma lista para outro (Shallow Copy e Deep Copy)
+"""
+Quando utilizamos .copy() copiamos os dados da lista para uma nova lista, mas elas
+ficaram totalmente independentes, ou seja, modificando uma lista, não afeta a outra.
+Isso em Python é chamado de Deep Copy
+"""
+valor3 = [1, 2, 3, 4, 5]
+
+nova = valor3.copy()
+
+#Forma 2 - Shallow Copy
+
+valor4 = [1, 2, 3, 4, 5]
+
+nova2 = valor4
+nova2.append(6)
+
+"""
+Acima utilizamos a cópia via atribuição e copiamos os dados da lista para a nova lista, mas 
+após realizar modificações em uma das listas, essa modificação se refletiu em ambas as lista.
+Isso em Python é chamado Shallow Copy
+"""
